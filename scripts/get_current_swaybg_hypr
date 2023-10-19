@@ -1,0 +1,1 @@
+ps aux |grep swaybg | grep tty | grep -e usr -e tmp | awk -F 'swaybg' '{print $2}' | awk '{print $2}'

@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+import urllib.request
+from os import system
+fp = urllib.request.urlopen("http://dtu.ac.in");
+mybytes = fp.read();
+fp.close();
+website_string = mybytes.decode("utf8", errors = 'ignore');
+
+with open("~/dtu_website_temp.txt", "w") as new:
+    new.write(website_string);
+
+system("diff ~/dtu_website_temp.txt ~/dtu_website.txt > ~/website_diffs.txt");
+
+with open("~/dtu_website.txt", "w") as old:
+    old.write(website_string);
+
+system("rm ~/dtu_website_temp.txt");
+
+with open("~/website_diffs.txt", "r") as diffs:
+    system("notify-send 'Updates are: {0}'".format(diffs.read()))
+
+#system("rm ~/website_diffs.txt");

@@ -1,0 +1,4 @@
+#!/bin/bash
+breh=$(cmus-remote -Q | grep artist | awk '{print $3 " " $4 " " $5 " " $6}')
+breh2=$(cmus-remote -Q | grep title | awk '{print $3 " " $4 " " $5 " " $6}')
+echo -e "$breh - $breh2"

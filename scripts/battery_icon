@@ -1,0 +1,21 @@
+#!/bin/bash
+
+percent=$(~/scripts/battery_percent.sh)
+echo $percent > ~/.battery_file.txt
+
+if [ $percent == "chargin" ]; then
+	echo ""
+	echo 0 > ~/.battery_file.txt
+elif [ $percent -gt 90 ]; then
+	echo ""
+elif [ $percent -gt 70 ]; then
+	echo ""
+elif [ $percent -gt 50 ]; then
+	echo ""
+elif [ $percent -gt 30 ]; then
+	echo ""
+elif [ $percent -gt 5 ]; then
+	echo ""
+else
+	echo ""
+fi

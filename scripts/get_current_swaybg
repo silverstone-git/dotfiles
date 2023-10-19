@@ -1,0 +1,2 @@
+#!/bin/bash
+ps aux |grep swaybg | grep tty | grep -e local -e tmp | awk -F 'swaybg' '{print $2}' | awk '{print $4}'

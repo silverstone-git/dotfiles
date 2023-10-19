@@ -1,0 +1,6 @@
+#if [[ $(/home/cyto/scripts/connected) == "0" ]]; then
+#	echo "Grind Weather 🚀"
+#	exit
+#fi
+cd ~/cweather_v1_5
+./icon_then_temp 28.6 77.1

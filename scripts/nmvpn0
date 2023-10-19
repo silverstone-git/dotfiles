@@ -1,0 +1,4 @@
+#!/bin/bash
+
+nmcli connection down $(nmcli connection show | grep vpn | grep wlan0 | awk '{print $1}')
+notify-send "VPN has been turned Off"

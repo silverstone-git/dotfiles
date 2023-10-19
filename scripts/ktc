@@ -1,0 +1,8 @@
+#!/bin/bash
+
+fullName=$1
+restAfterDot=${fullName#*"."}
+indexOfDot=$(( ${#fullName} - ${#restAfterDot} - 1))
+fileName=${fullName:0:indexOfDot}
+jarName="$fileName.jar"
+kotlinc $fullName -include-runtime -d $jarName && java -jar $jarName

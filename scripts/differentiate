@@ -1,0 +1,9 @@
+#!/usr/bin/env python3
+from sympy import *
+import numpy as np
+from sys import argv
+x = Symbol('x')
+y = eval(argv[1])
+yprime = y.diff(x)
+print("The derivative is: ", yprime)
+

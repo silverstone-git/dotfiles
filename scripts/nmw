@@ -1,0 +1,6 @@
+#!/bin/bash
+
+nmcli networking on
+nmcli radio wifi on
+nmcli device wifi list
+notify-send "Type read -sp \"pk: \" foo && ndwc <SSID> password $foo"

@@ -1,0 +1,6 @@
+if [[ $(~/scripts/connected) == "0" ]]; then
+	echo "Grind Weather"
+	exit
+fi
+cd ~/cweather_v1_5
+./temp_desctr 28.6 77.1

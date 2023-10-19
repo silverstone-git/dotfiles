@@ -1,0 +1,92 @@
+#!/bin/bash
+#
+#
+#temporarily commented out the 'if' because it really is a grind weather
+#if [[ $(~/scripts/connected) == "0" ]]; then
+	echo "Grind Weather " > ~/.tempfile.txt
+	echo ""
+	exit
+#fi
+
+cd ~/cweather_v1_5
+temp_descstr="$(./temp_desctr 28.6 77.1)"
+#temp_descstr="$(./temp_desctr)"
+descstr=$(echo $temp_descstr | cut -d " " -f 2-)
+temp=$(echo $temp_descstr | cut -d " " -f 1)
+
+if [ "$descstr" == "mist" ]; then
+	echo ""
+elif [ "$descstr" == "thunderstorm" ]; then
+	echo ""
+elif [ "$descstr" == "rain" ]; then
+	echo "殺"
+elif [ "$descstr" == "clear sky" ]; then
+	echo ""
+elif [ "$descstr" == "snow" ]; then
+	echo ""
+elif [ "$descstr" == "smoke" ]; then
+	echo ""
+elif [ "$descstr" == "fog" ]; then
+	echo "敖"
+elif [ "$descstr" == "light rain" ]; then
+	echo ""
+elif [ "$descstr" == "moderate rain" ]; then
+	echo ""
+elif [ "$descstr" == "overcast clouds" ]; then
+	echo ""
+elif [ "$descstr" == "scattered clouds" ]; then
+	echo ""
+elif [ "$descstr" == "drizzle" ]; then
+	echo ""
+elif [ "$descstr" == "haze" ]; then
+	echo ""
+elif [ "$descstr" == "broken clouds" ]; then
+	echo "摒"
+elif [ "$descstr" == "few clouds" ]; then
+	echo ""
+elif [ "$descstr" == "tornado" ]; then
+	echo ""
+else
+	echo ""
+fi
+
+echo "$temp ${descstr^}" > ~/.tempfile.txt
+
+
+#        // checking which weather icon to use
+#        char weather_icon[20];
+#        if(strcmp(descstr, "mist") == 0)
+#                strncpy(weather_icon, "🌬️", sizeof(weather_icon));
+#        else if(strcmp(descstr, "thunderstorm") == 0)
+#                strncpy(weather_icon, "🌩️", sizeof(weather_icon));
+#        else if(strcmp(descstr, "rain") == 0)
+#                strncpy(weather_icon, "☔", sizeof(weather_icon));
+#        else if(strcmp(descstr, "clear sky") == 0)
+#                strncpy(weather_icon, "☀️", sizeof(weather_icon));
+#        else if(strcmp(descstr, "snow") == 0)
+#                strncpy(weather_icon, "❄️", sizeof(weather_icon));
+#        else if(strcmp(descstr, "smoke") == 0)
+#                strncpy(weather_icon, "🚬", sizeof(weather_icon));
+#        else if(strcmp(descstr, "fog") == 0)
+#                strncpy(weather_icon, "🌁", sizeof(weather_icon));
+#        else if(strcmp(descstr, "light rain") == 0)
+#                strncpy(weather_icon, "🌈", sizeof(weather_icon));
+#        else if(strcmp(descstr, "moderate rain") == 0)
+#                strncpy(weather_icon, "🌧️", sizeof(weather_icon));
+#        else if(strcmp(descstr, "overcast clouds") == 0)
+#                strncpy(weather_icon, "🌫️", sizeof(weather_icon));
+#        else if(strcmp(descstr, "scattered clouds") == 0)
+#                strncpy(weather_icon, "🌫️", sizeof(weather_icon));
+#        else if(strcmp(descstr, "drizzle") == 0)
+#                strncpy(weather_icon, "💦", sizeof(weather_icon));
+#        else if(strcmp(descstr, "haze") == 0)
+#                strncpy(weather_icon, "🌫️", sizeof(weather_icon));
+#        else if(strcmp(descstr, "broken clouds") == 0)
+#                strncpy(weather_icon, "☁", sizeof(weather_icon));
+#        else if(strcmp(descstr, "few clouds") == 0)
+#                strncpy(weather_icon, "☁", sizeof(weather_icon));
+#        else if(strcmp(descstr, "tornado") == 0)
+#                strncpy(weather_icon, "🌪", sizeof(weather_icon));
+#        else
+#                strncpy(weather_icon, "🌥️", sizeof(weather_icon));
+

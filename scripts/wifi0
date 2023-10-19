@@ -1,0 +1,8 @@
+#!/bin/bash
+
+sudo ip link
+read -p "Enter device name: " devname
+sudo ip link set $devname down
+#sudo kill $(pgrep wpa_supplicant)
+sudo systemctl stop iwd
+sudo systemctl stop dhcpcd@$devname

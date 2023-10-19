@@ -1,0 +1,6 @@
+#!/bin/bash
+#makes a virtual device and casts screen to it, to make discord etc. work on wayland
+sudo modprobe v4l2loopback exclusive_caps=1 card_label=VirtualVideoDevice
+vidDevLoc=$(v4l2-ctl --list-devices | grep /dev/ | awk '{print $1}')
+#vidDev=${vidDevLoc:5:6}
+wf-recorder --muxer=v4l2 --codec=rawvideo --file=$vidDevLoc -x yuv420p --force-yuv

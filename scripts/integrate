@@ -1,0 +1,11 @@
+#!/usr/bin/env python3
+
+from sympy import *
+from sys import argv
+def intgt(string):
+    #print("Integrating the function", string)
+    x,y = symbols('x y')
+    expr = eval(string)
+    print("\nResult: {} + constant".format(integrate(expr, x)), "\n")
+
+intgt(argv[1])

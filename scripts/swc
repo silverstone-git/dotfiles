@@ -1,0 +1,2 @@
+#!/bin/sh
+vim ~/.config/sway/config

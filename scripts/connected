@@ -1,0 +1,7 @@
+#!/bin/bash
+
+mystr=$(nmcli | grep wlan0 | awk '{print $2}')
+mystr=${mystr:0:11}
+if [[ $mystr == "unavailable" ]]; then
+	echo "0"
+fi

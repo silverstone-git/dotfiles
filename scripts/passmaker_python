@@ -1,0 +1,11 @@
+#!/usr/bin/env python3
+from random import randint
+from sys import argv
+#bigboi = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~!@#$^&*()_+|[]{};:,.<>?1234567890-="
+bigboi = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_"
+str1 = ""
+c = 0
+while c < int(argv[1]):
+    str1 += bigboi[randint(0,len(bigboi)-1)]
+    c+=1
+print(str1)

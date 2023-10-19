@@ -1,0 +1,73 @@
+#!/usr/bin/env python3
+
+# py file for pdf to text ocr conversion
+# copied whole convert function from geeksforgeeks, replace PIL with Pillow because I did'nt find any PIL in repo, maybe deprecated
+# use Pillow instead
+
+# just put all pdf files to be converted inside a folder and run this file in it
+
+
+# Import libraries
+from PIL import Image
+import pytesseract
+import sys
+from pdf2image import convert_from_path
+import os
+pardir = os.getcwd()
+
+
+def convert(PDF_file):
+    '''
+    Part #1 : Converting PDF to images
+    '''
+    
+    print("Starting conversion of ==> ", PDF_file, "...")
+
+    # Store all the pages of the PDF in a variable
+    pages = convert_from_path(PDF_file, 500)
+
+    # Counter to store images of each page of PDF to image
+    image_counter = 1
+
+
+    naam = PDF_file[:-4]
+
+    pathres = os.path.join(pardir, naam)
+    os.mkdir(naam)
+    os.chdir(naam)
+    # Iterate through all the pages stored above
+    for page in pages:
+
+       # Declaring filename for each page of PDF as JPG
+       filename = "page_"+str(image_counter)+".jpg"
+
+       # Save the image of the page in system
+       page.save(filename, 'JPEG')
+
+       # Increment the counter to update filename
+       image_counter = image_counter + 1
+       print("Saved page_" + str(image_counter))
+
+    print("Extracted all images")
+
+    '''
+    Part #2 - Recognizing text from the images using OCR
+    '''
+    print("Recognizing text...")
+    filelimit = image_counter-1
+    outfile = "out_text.txt"
+    f = open(outfile, "a")
+    for i in range(1, filelimit + 1):
+       filename = "page_"+str(i)+".jpg"
+       text = str(((pytesseract.image_to_string(Image.open(filename)))))
+       text = text.replace('-\n', '')
+       f.write(text)
+
+    f.close()
+    os.chdir(pardir)
+
+
+
+for ff in sys.argv[1:]:
+    if ff[-4:] == ".pdf":
+        convert(ff)

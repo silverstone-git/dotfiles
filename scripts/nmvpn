@@ -1,0 +1,4 @@
+#!/bin/bash
+
+nmcli connection up $( nmcli c | grep udp | awk '{print $1}' | shuf -n1) passwd-file ~/protonOpenVPNConfigs/passwd-file
+notify-send "VPN On :)"

@@ -1,0 +1,11 @@
+#!/usr/bin/env python
+from PIL import Image
+import pytesseract
+from sys import argv
+
+outfile = "out_text.txt"
+f = open(outfile, "a")
+filename = argv[1]
+text = str(((pytesseract.image_to_string(Image.open(filename)))))
+text = text.replace('-\n', '')
+print(text);

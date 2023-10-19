@@ -1,0 +1,13 @@
+#!/bin/bash
+
+sudo rfkill unblock wlan
+ip link
+read -p "Enter device name: " devname
+sudo ip link set $devname up
+
+sudo systemctl start iwd
+
+echo -e "Commands are - 'device list', 'station <device> scan', 'station <device> get-networks', and, 'station <device> connect <SSID>'\n\n"
+echo -e "Use 'help' for more\n"
+
+iwctl

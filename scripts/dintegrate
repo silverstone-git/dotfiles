@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+
+from sys import argv
+from math import pi
+from sympy import *
+#exec("from math import {}".format(argv[1]))
+
+def my_attempt_on_integral(func1, start, end, width = 0.001):
+    s = 0
+    rng = end - start
+    n = int(rng/width)+1
+    for i in range(n):
+        print(i/n*100 , "%")
+        s += func1(start + rng*width*i ) * rng*width
+    return s
+
+x,y = symbols('x y')
+func = eval(argv[1])
+uplim = eval(argv[2])
+lowlim = eval(argv[3])
+print("\nResult: ", integrate(func, (x, uplim, lowlim) ), "\n")

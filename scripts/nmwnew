@@ -1,0 +1,8 @@
+#!/bin/sh
+
+nmcli networking on
+nmcli radio wifi on
+nmcli device wifi list
+read -p "SSID: " name
+read -sp "pk: " pk
+nmcli device wifi connect "$name" password "$pk"

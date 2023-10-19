@@ -1,0 +1,2 @@
+#!/bin/bash
+settimed /usr/share/backgrounds/Dynamic_Wallpapers/$(ls /usr/share/backgrounds/Dynamic_Wallpapers | grep xml | shuf -n1)

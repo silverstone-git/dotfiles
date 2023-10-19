@@ -1,0 +1,11 @@
+#!/bin/bash
+#settimed ~/Downloads/gnome-mojave-timed-wallpaper-master/mojave-timed.xml
+#settimed ~/.local/share/backgrounds/gnome/Exodus-timed.xml
+#settimed ~/.local/share/backgrounds/gnome/Minimal-Mojave-timed.xml
+#settimed ~/.local/share/backgrounds/gnome/Lakeside-timed.xml
+settimed ~/.local/share/backgrounds/gnome/Firewatch-timed.xml
+#settimed ~/.local/share/backgrounds/gnome/Big_Sur-timed.xml
+#settimed ~/.local/share/backgrounds/gnome/Big_Sur_Beach-timed.xml
+#
+#
+#settimed ~/.local/share/backgrounds/gnome/$(ls .local/share/backgrounds/gnome/ | grep xml | shuf -n1)

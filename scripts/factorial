@@ -1,0 +1,20 @@
+i=1
+n=$(echo "$1-1" | bc)
+product=1
+while true
+do
+
+    # multiplying the product inside the while loop
+    product=$(echo "$product*$i" | bc -l)
+    #echo "product is: $product"
+
+    # break condition
+    if [ $i -gt $n ] ; then
+        break
+    fi
+
+    # index increment
+    i=$(echo "$i + 1" | bc -l)
+done
+
+echo $product

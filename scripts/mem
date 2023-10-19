@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "$(free -m | grep Mem | awk '{print $3}') M"

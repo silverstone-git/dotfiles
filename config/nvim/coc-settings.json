@@ -1,0 +1,5 @@
+{
+  "coc.preferences.formatOnSave": true,
+  "eslint.autoFixOnSave": true,
+  "htmldjango.completion.enable": true
+}

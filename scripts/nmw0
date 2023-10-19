@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# put ## instead of %% to remove leading spaces instead of trailing
+nmcli connection down "$(myString2=$(myString=$(nmcli connection show | grep wifi) && echo ${myString:0:28}) && echo ${myString2%%*( )})"
+nmcli radio wifi off

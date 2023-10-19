@@ -1,0 +1,61 @@
+#!/bin/bash
+
+mydict="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~!@#$^&*()_+|[]{};:,.<>?1234567890-="
+mystr=""
+rescount=0
+
+needed_length=$1
+lengthoflist=88
+
+while :
+do
+
+if [ $needed_length -eq $rescount ]; then
+	break
+fi
+
+#echo "Number of Items by inbuilt method are: ${#breakfastlist}"
+#echo "Number of Items by loop are : $i"
+
+# --- finding a random index decimal between 0 and length
+
+randind=$(echo "$RANDOM*$lengthoflist/32767" | bc -l)
+
+# --- sieving out the integer part by finding the decimal point
+
+# searching for the part after dot
+restafterdot=${randind#*"."}
+
+# finding index of dot by cutting length of rest of the string from the main string, minus 1 because '.' also has some length
+indexofdot=$(( ${#randind} - ${#restafterdot} - 1 ))
+
+#echo "indexofdot is $indexofdot"
+if [ ${randind:0:1} = "." ]; then
+    # picking index 0 to 0 will give a space, not zero, so, non-generalizable
+    randind=0
+else
+    # reassigning randind to a shorter version of itself
+    randind=${randind:0:$indexofdot}
+fi
+
+#echo "randind after sieving the decimal is $randind"
+
+# --- sieving the index error possibility when random number between 0 to 1 is comes out to be 1, probability is very low, but exists
+if [ $randind = $lengthoflist ]; then
+    randind=$(echo "$randind-1" | bc -l)
+fi
+
+echo "Random Index Calculated: $randind"
+
+randomchar=${mydict:randind:1}
+echo "Random char is : $randomchar"
+
+mystr="${mystr}${randomchar}"
+
+
+((rescount++))
+
+done
+
+echo "$mystr"
+
