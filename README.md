@@ -3,6 +3,11 @@
 - [waybar](https://github.com/Alexays/Waybar)
 - [hypr](https://github.com/hyprwm/Hyprland)
 - [pywal](https://github.com/dylanaraps/pywal)
+- [grim](https://sr.ht/~emersion/grim/)
+- [wf-recorder](https://github.com/ammen99/wf-recorder)
+- [slurp](https://github.com/emersion/slurp)
+- [imagemagick](https://imagemagick.org/index.php)
+- [mako](https://github.com/emersion/mako)
 - [wallutils](https://github.com/xyproto/wallutils)
 - [Dynamic Wallpapers](https://github.com/saint-13/Linux_Dynamic_Wallpapers) (Use Method 3 for all the wallpapers)
 - [cowsay](https://github.com/piuccio/cowsay)
@@ -34,3 +39,5 @@ do
 done
 
 ```
+
+Also, enter your home folder name in .config/waybar/config instead of "cyto"
