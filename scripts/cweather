@@ -1,2 +1,2 @@
 cd ~/cweather_v1_5
-./temp_icon_onli $1 $2
+./cweather $1 $2

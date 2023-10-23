@@ -5,6 +5,7 @@
 - [pywal](https://github.com/dylanaraps/pywal)
 - [grim](https://sr.ht/~emersion/grim/)
 - [wf-recorder](https://github.com/ammen99/wf-recorder)
+- [v4l2loopback](https://github.com/umlaeute/v4l2loopback)
 - [slurp](https://github.com/emersion/slurp)
 - [imagemagick](https://imagemagick.org/index.php)
 - [mako](https://github.com/emersion/mako)
@@ -20,6 +21,7 @@
 - [NetworkManager](https://networkmanager.dev/)
 - [cweather](https://github.com/saint-13/Linux_Dynamic_Wallpapers)
 - [acpi](https://uefi.org/htmlspecs/ACPI_Spec_6_4_html/) (preinstalled in most distros)
+- [droidcam](https://github.com/Kyuunex/better_droidcam_linux_client) (optional)
 
 Place your Open VPN Configs in folder 'protonOpenVPNConfigs' with 'passwd-file' in it
 Add Connections by
@@ -41,3 +43,7 @@ done
 ```
 
 Also, enter your home folder name in .config/waybar/config instead of "cyto"
+
+You can choose your favourite wallpaper or choose random on every boot (last line) in ./scripts/setwallpaper-sway by uncommenting that line
+
+You can choose your location in weather scripts by changing coordinates in ./scripts/cweather_for_waybar

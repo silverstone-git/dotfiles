@@ -3,4 +3,4 @@
 #	exit
 #fi
 cd ~/cweather_v1_5
-./icon_then_temp 28.6 77.1
+./cweather 28.6 77.1
