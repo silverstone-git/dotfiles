@@ -1,0 +1,5 @@
+curlOutput=$(curl -s -X POST -H "Authorization: Bearer $(gcloud auth print-access-token)" -H "Content-Type: application/json" https://us-central1-aiplatform.googleapis.com/v1/projects/faekbank-app/locations/us-central1/publishers/google/models/text-bison:predict -d "{'instances': [{'prompt':'$1 $2 $3 $4 $5 $6 $7 $8 $9 $10 $11 $12 $13 $14 $15 $16 $17 $18 $19 $20 $21'}],'parameters': {'temperature': 0.2,'maxOutputTokens': 256,'topK': 40,'topP': 0.95}}" | jq '.predictions.[0].content')
+
+echo -e "\n\n"
+echo "from rich.console import Console; from rich.markdown import Markdown; cl=Console(); md=Markdown($curlOutput); cl.print(md);" | python
+echo -e "\n\n"

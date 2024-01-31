@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+
+
+IN=$(gsettings get org.gnome.desktop.background picture-uri)
+subsi1=${IN:8:200}
+xmlFile=${subsi1%\'*}
+
+imageFile=$(xml sel -t -v 'background/static/file' $xmlFile | head -n1)
+echo $imageFile
