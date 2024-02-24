@@ -6,5 +6,11 @@ IN=$(gsettings get org.gnome.desktop.background picture-uri)
 subsi1=${IN:8:200}
 xmlFile=${subsi1%\'*}
 
-imageFile=$(xml sel -t -v 'background/static/file' $xmlFile | head -n1)
+if [[ xmlFile == *.xml ]]; then
+	# file is an xml
+	imageFile=$(xml sel -t -v 'background/static/file' $xmlFile | head -n1)
+else
+	imageFile=$xmlFile
+fi
+
 echo $imageFile

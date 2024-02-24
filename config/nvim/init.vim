@@ -30,6 +30,12 @@ let g:ale_fixers = {
 \       'prettier',
 \       'eslint',
 \   ],
+\   'typescript': [
+\       'prettier',
+\   ],
+\   'typescriptreact': [
+\       'eslint',
+\   ],
 \   'go': [
 \	'gofmt'
 \   ]

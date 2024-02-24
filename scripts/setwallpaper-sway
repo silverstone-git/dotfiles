@@ -16,5 +16,6 @@
 #settimed /usr/share/backgrounds/Dynamic_Wallpapers/EOS-Sunset.xml
 #settimed /usr/share/backgrounds/Dynamic_Wallpapers/Monterey.xml
 #settimed /usr/share/backgrounds/Dynamic_Wallpapers/SolidMountain.xml
-settimed /usr/share/backgrounds/Dynamic_Wallpapers/LofiCity.xml
+#settimed /usr/share/backgrounds/Dynamic_Wallpapers/LofiCity.xml
+settimed /usr/share/backgrounds/Dynamic_Wallpapers/Blobs.xml
 #settimed /usr/share/backgrounds/Dynamic_Wallpapers/$(ls /usr/share/backgrounds/Dynamic_Wallpapers | grep xml | shuf -n1)
