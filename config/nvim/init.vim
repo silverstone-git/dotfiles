@@ -28,7 +28,6 @@ let g:ale_fixers = {
 \   ],
 \   'javascript': [
 \       'prettier',
-\       'eslint',
 \   ],
 \   'typescript': [
 \       'prettier',
@@ -43,6 +42,8 @@ let g:ale_fixers = {
 
 let g:ale_linters = {
 \ 'go': ['gopls'],
+\ 'typescript': ['prettier'],
+\ 'javascript': ['prettier'],
 \}
 
 " Initialize configuration dictionary
