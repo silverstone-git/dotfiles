@@ -3,10 +3,10 @@
 # Symbolics, Fluent, We Yamle, Zorin Mountain fog, Desert, Sunset, Monterey, SolidMountain, LofiCity, ZorinBlur,
 #
 #settimed /usr/share/backgrounds/Dynamic_Wallpapers/ZorinBlur.xml
-settimed /usr/share/backgrounds/Dynamic_Wallpapers/Drool.xml
+#settimed /usr/share/backgrounds/Dynamic_Wallpapers/Drool.xml
 #settimed /usr/share/backgrounds/Dynamic_Wallpapers/Disco.xml
 #settimed /usr/share/backgrounds/Dynamic_Wallpapers/Symbolics.xml
-#settimed /usr/share/backgrounds/Dynamic_Wallpapers/EOS-WeYamle.xml
+settimed /usr/share/backgrounds/Dynamic_Wallpapers/EOS-WeYamle.xml
 #settimed /usr/share/backgrounds/Dynamic_Wallpapers/ChromeOSGreens.xml
 #settimed /usr/share/backgrounds/Dynamic_Wallpapers/ChromeOSWind.xml
 #settimed /usr/share/backgrounds/Dynamic_Wallpapers/Fluent.xml

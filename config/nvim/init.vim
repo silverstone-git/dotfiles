@@ -12,6 +12,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'dense-analysis/ale'
 "Plug 'dylanaraps/wal.vim'
+
 call plug#end()
 
 set termguicolors
@@ -54,3 +55,5 @@ nnoremap ,<space> :ALEFix<CR>
 
 let g:dart_format_on_save = v:true
 let g:airline_theme='bubblegum'
+
+lua require("init")

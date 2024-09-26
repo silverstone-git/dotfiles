@@ -84,7 +84,7 @@
 
 "custom/weather": {
 	"interval": 120,
-	"format": "    {}",
+	"format": "  {}",
 	"exec": "~/scripts/cweather_for_waybar",
 	"tooltip": false,
 },
@@ -97,7 +97,7 @@
 
 "network": {
   "interval": 2,
-  "format-wifi": " {signalStrength}%",
+  "format-wifi": "   {signalStrength}%",
   "format-ethernet": "",
   "format-linked": " {ipaddr}",
   "format-disconnected": " Disconnected",
@@ -126,11 +126,11 @@
 
 "pulseaudio": {
   // "scroll-step": 1, // %, can be a float
-  "format": "{icon} {volume}%     {format_source}",
-  "format-bluetooth": "{icon} {volume}% {format_source}",
-  "format-bluetooth-muted": " {format_source}",
+  "format": "{icon}   {volume}%     {format_source}",
+  "format-bluetooth": "{icon}   {volume}% {format_source}",
+  "format-bluetooth-muted": "   {format_source}",
   "format-muted": "  {format_source}",
-  "format-source": " {volume}%",
+  "format-source": "  {volume}%",
   "format-source-muted": "",
   "format-icons": {
     "headphone": "",

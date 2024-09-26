@@ -1,0 +1,12 @@
+#!/bin/bash
+
+gnome_session_output=$(~/scripts/is_gnome_session_running)
+if [[ -z "$gnome_session_output" ]]; then
+  # its not gnome
+  current_swaybg=$(~/scripts/get_current_swaybg_hypr)
+else
+  # its gnome
+  current_swaybg=$(~/scripts/get_current_swaybg)
+fi
+
+wal -i "$current_swaybg" -e

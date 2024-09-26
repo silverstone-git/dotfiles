@@ -1,2 +1,0 @@
-#!/bin/bash
-wal -i $(~/scripts/get_current_swaybg_hypr) -e

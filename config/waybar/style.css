@@ -1,11 +1,14 @@
+@import url('../../.cache/wal/colors-waybar.css');
+
 * {
-  font-family: JetBrainsMono;
-  font-size: 13px;
-  min-height: 0;
+    all: unset;
+	  font-family: 'JetBrainsMono Nerd Font';
+    transition: background-color .3s ease;
+    color: @foreground
 }
 
-window#waybar {
-  background-color: rgba(0, 0, 0, 0.2);
+window {
+  background-color: transparent;
 }
 
 #workspaces {
@@ -18,10 +21,14 @@ window#waybar {
   border-radius: 15px;
   margin-right: 10px;
   margin-bottom: 4px;
-  padding: 1px 3px;
+  padding: 3px 3px;
   font-weight: bolder;
-  color: white;
+  /*
+* color: white;
   background-color: #181818;
+  */
+  color: @foreground;
+  /*background-color: @background;*/
 }
 
 /*
@@ -35,13 +42,13 @@ window#waybar {
 
 #workspaces button.active,
 #workspaces button.focused {
-  padding: 1px 3px;
+  padding: 3px 6px;
   box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
     rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
     rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 
-  color: #0d0605;
-  background: #ded8d9;
+  color: @foreground;
+  background: @color2;
 }
 
 #tray,

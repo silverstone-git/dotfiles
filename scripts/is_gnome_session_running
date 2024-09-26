@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+ps aux | grep gnome-session | awk '{ if ($11 == "gnome-session") print "Yes"; }'

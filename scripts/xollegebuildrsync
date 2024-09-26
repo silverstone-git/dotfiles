@@ -1,0 +1,3 @@
+#!/usr/bin/sh
+rsync -av --delete /home/cyto/cava/next/xollege/.next/ cyto@aryan.cfd:/home/cyto/projects/xollege/.next/
+ssh cyto@aryan.cfd "pm2 restart 0"

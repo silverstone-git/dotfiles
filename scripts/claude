@@ -1,0 +1,23 @@
+#!/usr/bin/python
+import anthropic
+
+client = anthropic.Anthropic()
+
+message = client.messages.create(
+    model="claude-3-5-sonnet-20240620",
+    max_tokens=1000,
+    temperature=0,
+    messages=[
+        {
+            "role": "user",
+            "content": [
+                {
+                    "type": "text",
+                    "text": "How to act like I know everything in finance? Give me some cool buzzwords I can use to seem like a finance bro"
+                }
+            ]
+        }
+    ]
+)
+
+print(message.content)

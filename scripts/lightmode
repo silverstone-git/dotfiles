@@ -1,0 +1,5 @@
+#!/bin/bash
+gsettings set org.gnome.desktop.interface gtk-theme "Adwaita"
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
+gsettings set org.gnome.desktop.interface gtk-theme "Adwaita"
+xfconf-query -c xsettings -p /Net/ThemeName -s "Adwaita"

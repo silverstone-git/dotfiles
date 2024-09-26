@@ -8,4 +8,6 @@ f = open(outfile, "a")
 filename = argv[1]
 text = str(((pytesseract.image_to_string(Image.open(filename)))))
 text = text.replace('-\n', '')
+f.write(text)
+f.close()
 print(text);

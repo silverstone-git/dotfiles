@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+currenttime=$(date +%H:%M)
+if [[ "$currenttime" > "17:00" ]] || [[ "$currenttime" < "06:30" ]]; then
+  ~/scripts/darkmode
+  ~/scripts/setwallpaper-sway &
+  sleep 5
+  ~/scripts/setwalpalette
+else
+  ~/scripts/lightmode
+  ~/scripts/setwallpaper-sway &
+  sleep 5
+  ~/scripts/setwalpalette
+fi
+
