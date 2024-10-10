@@ -1,0 +1,20 @@
+#!/bin/bash
+#from random import random
+#print(["Heads", "Tails"][int(random()*2)])
+clear
+#echo "h or t ? " | cowsay -f morpheus
+echo "h or t ? " | cowsay
+read
+
+randint=$RANDOM
+
+#res=$(python3 -c 'from random import random ; print(["h", "t"][int(random()*2)])')
+
+
+if  [[ $randint -lt 16384 ]]; then
+    clear
+    echo "You're goddamn right" | cowsay
+else
+    clear
+    echo "bhains chara jaake" | cowsay
+fi

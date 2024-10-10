@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
-from random import randint
+
 from sys import argv
+import string
+import secrets
+
+"""
+from random import randint
 #bigboi = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~!@#$^&*()_+|[]{};:,.<>?1234567890-="
 bigboi = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_"
 str1 = ""
@@ -9,3 +14,11 @@ while c < int(argv[1]):
     str1 += bigboi[randint(0,len(bigboi)-1)]
     c+=1
 print(str1)
+"""
+
+alphabet = string.ascii_letters + string.digits + string.punctuation
+password = ''.join(secrets.choice(alphabet) for i in range(12 if not len(argv) > 1 else int(argv[1])))
+
+
+#print(token_urlsafe())
+print(password)

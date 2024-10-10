@@ -5,10 +5,14 @@ if [[ "$currenttime" > "17:00" ]] || [[ "$currenttime" < "06:30" ]]; then
   ~/scripts/setwallpaper-sway &
   sleep 5
   ~/scripts/setwalpalette
+  pkill waybar
+  waybar &
 else
   ~/scripts/lightmode
   ~/scripts/setwallpaper-sway &
   sleep 5
   ~/scripts/setwalpalette
+  pkill waybar
+  waybar &
 fi
 
