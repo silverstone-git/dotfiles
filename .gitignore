@@ -1,1 +1,4 @@
 scripts/collegechuniyesync
+scripts/infinite_api_tester_sih.py
+scripts/pgdump_outsie.sql
+scripts/script.lisp

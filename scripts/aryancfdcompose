@@ -1,0 +1,26 @@
+#!/bin/bash
+
+DIR_SH="/home/cyto/web/shortie"
+DIR_OUTSIE="/home/cyto/web/outstagram"
+DIR_GOWHEELS="/home/cyto/web/gowheels"
+
+case "$1" in
+  start)
+    echo "Starting Docker Compose projects..."
+    cd "$DIR_SH" && docker-compose up -d
+    cd "$DIR_OUTSIE" && docker-compose up -d
+    cd "$DIR_GOWHEELS" && docker-compose up -d
+    ;;
+  stop)
+    echo "Stopping Docker Compose projects..."
+    cd "$DIR_SH" && docker-compose down
+    cd "$DIR_OUTSIE" && docker-compose down
+    cd "$DIR_GOWHEELS" && docker-compose down
+    ;;
+  *)
+    echo "Usage: $0 {start|stop}"
+    exit 1
+    ;;
+esac
+
+exit 0

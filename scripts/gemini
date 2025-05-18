@@ -1,10 +1,27 @@
-#!/bin/bash
-prompt="$1 $2 $3 $4 $5 $6 $7 $8 $9 ${10} ${11} ${12} ${13} ${14} ${15} ${16} ${17} ${18} ${19} ${20} ${21} ${22} ${23} ${24} ${25} ${26} ${27} ${28} ${29} ${30} ${31} ${32} ${33} ${34} ${35} ${36} ${37} ${38} ${39} ${40} ${41} ${42} ${43} ${44} ${45} ${46}"
-curlOutput=$(curl -s -X POST -H "Content-Type: application/json" "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=$GEMINI_API_KEY" -d "{\"contents\":[{\"parts\":[{\"text\":\"$prompt\"}]}]}" | jq '.candidates.[0].content.parts.[0].text')
+#!/home/cyto/gitcloned/anaconda/envs/webthinker/bin/python
+from openai import AsyncOpenAI
+import asyncio
+import os
+from sys import argv
+
+client= AsyncOpenAI(base_url= "https://generativelanguage.googleapis.com/v1beta/openai/", api_key= os.environ.get('OPENAI_API_KEY'))
+
+# client.
+
+async def main():
+    response = await client.chat.completions.create(
+      model="gemini-2.5-flash-preview-04-17",
+      messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "user", "content": ' '.join(argv[1:])}
+      ],
+      stream=True
+    )
+
+    async for chunk in response:
+        # print(chunk.choices[0].delta)
+        if chunk.choices and chunk.choices[0].delta and chunk.choices[0].delta.content is not None:
+            print(chunk.choices[0].delta.content, end="", flush=True)
 
 
-echo -e "\n\n"
-#temp_file=$(mktemp)
-echo "from rich.console import Console; from rich.markdown import Markdown; cl=Console(record = True); md=Markdown($curlOutput); cl.print(md); " | python
-#echo $curlOutput
-echo -e "\n\n"
+asyncio.run(main())
