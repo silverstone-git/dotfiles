@@ -1,4 +1,4 @@
-#!/home/cyto/gitcloned/anaconda/envs/webthinker/bin/python
+#!/home/cyto/miniforge3/envs/mcp/bin/python
 from openai import AsyncOpenAI
 import asyncio
 import os

@@ -16,7 +16,8 @@ while c < int(argv[1]):
 print(str1)
 """
 
-alphabet = string.ascii_letters + string.digits + string.punctuation
+alphabet = string.ascii_letters + string.digits
+#+ string.punctuation
 password = ''.join(secrets.choice(alphabet) for i in range(12 if not len(argv) > 1 else int(argv[1])))
 
 

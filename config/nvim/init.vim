@@ -1,27 +1,67 @@
 call plug#begin()
-Plug 'preservim/nerdtree'
+
+" syntax tree etc.
+Plug 'nvim-tree/nvim-web-devicons'
 Plug 'tpope/vim-sensible'
+" Plug 'preservim/nerdtree'
+Plug 'nvim-tree/nvim-tree.lua'
+Plug 'numToStr/Comment.nvim'
 Plug 'tpope/vim-surround'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'neovim/nvim-lspconfig'
 Plug 'ray-x/go.nvim'
 Plug 'ray-x/guihua.lua'
+Plug 'dense-analysis/ale'
+
+
+" lspconfig and cmp
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
+" theme
+Plug 'shaunsingh/nord.nvim'
+Plug 'sainnhe/gruvbox-material'
+
+" vsnip
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
+
+" airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'dense-analysis/ale'
-"Plug 'dylanaraps/wal.vim'
 
 call plug#end()
 
-set termguicolors
+lua require('Comment').setup()
 
-"uncomment if havent set termguicolors and have a pywal cache
-"colorscheme wal
+" Important!!
+"
+if has('termguicolors')
+	set termguicolors
+endif
 
-"uncomment if coc-prettier is installed instead of ale
-"command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
+" For dark version.
+" set background=dark
+
+" For light version.
+set background=light
+
+" Set contrast.
+" This configuration option should be placed before `colorscheme gruvbox-material`.
+" Available values: 'hard', 'medium'(default), 'soft'
+let g:gruvbox_material_background = 'hard'
+
+" For better performance
+let g:gruvbox_material_better_performance = 1
+
+" colorscheme nord
+colorscheme gruvbox-material
 
 let g:ale_fixers = {
 \   'html': [
@@ -38,6 +78,9 @@ let g:ale_fixers = {
 \   ],
 \   'go': [
 \	'gofmt'
+\   ],
+\   'python': [
+\	'pyright'
 \   ]
 \}
 
@@ -45,13 +88,11 @@ let g:ale_linters = {
 \ 'go': ['gopls'],
 \ 'typescript': ['prettier'],
 \ 'javascript': ['prettier'],
+\ 'python': ['pyright'],
 \}
 
 " Initialize configuration dictionary
 let g:fzf_vim = {}
-
-nnoremap ,n :NERDTree<CR>
-nnoremap ,<space> :ALEFix<CR>
 
 let g:dart_format_on_save = v:true
 let g:airline_theme='bubblegum'

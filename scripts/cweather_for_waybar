@@ -2,5 +2,5 @@
 #	echo "Grind Weather 🚀"
 #	exit
 #fi
-cd ~/cweather_v1_5
+cd ~/cweather
 ./cweather 28.6 77.1
